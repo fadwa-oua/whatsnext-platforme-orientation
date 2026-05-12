@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Politique de confidentialité — What's Next ?</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:  rgb(59,80,128,.9);
+      --white: #ffffff;
+      --light: #f8f8fc;
+      --muted: #7a7a99;
+      --accent:#a8c4e0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2.5rem 1rem 3rem;
+      border-top: 3px solid var(--accent);
+    }
+
+    /* Remplacez .logo-wrap par : */
+.logo-wrap {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;  /* logo gauche, bouton droite */
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+    .logo-wrap img {
+  max-width: 300px;  /* was: 2060px */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      gap: .3rem;
+    }
+    .logo-text .logo-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .logo-text .logo-rule {
+      width: 260px; height: 2px;
+      background: var(--navy);
+    }
+    .logo-text .logo-tagline {
+      font-size: .88rem;
+      color: var(--accent);
+      letter-spacing: .18em;
+    }
+
+    
+    nav.scrolled .logo-link img { height: 50px; }
+    .card { width: 100%; max-width: 700px; }
+
+    .page-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: .3rem;
+    }
+    .page-subtitle {
+      font-size: .8rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+      margin-bottom: 1.6rem;
+    }
+
+    .rgpd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--light);
+      border: 1.5px solid var(--accent);
+      border-radius: 4px;
+      padding: .45rem .9rem;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 2.2rem;
+    }
+    .rgpd-badge svg { width: 14px; height: 14px; }
+    
+
+    /* ── INTRO ── */
+    .intro-text { margin-bottom: 2.2rem; }
+    .intro-text h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: .55rem;
+    }
+    .intro-line {
+      border: none;
+      border-top: 2px solid var(--navy);
+      width: 48px;
+      margin-bottom: 1.2rem;
+    }
+    .intro-text p {
+      font-size: .95rem;
+      color: #3a3a5c;
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-text strong { color: var(--navy); font-weight: 600; }
+    .intro-text em { font-style: italic; }
+
+    .divider-full {
+      width: 100%;
+      height: 1px;
+      background: #e0e0f0;
+      margin-bottom: 2.4rem;
+    }
+
+    /* ── SECTION ── */
+    .section-para { margin-bottom: 2.4rem; }
+
+    .section-para h3 {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: .45rem;
+    }
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: .65rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .sep {
+      display: block;
+      width: 32px; height: 2px;
+      background: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-para p {
+      font-size: .92rem;
+      color: #3a3a5c;
+      line-height: 1.9;
+      margin-bottom: .8rem;
+    }
+    .section-para p:last-child { margin-bottom: 0; }
+    .section-para strong { color: var(--navy); font-weight: 600; }
+
+    .highlight-box {
+      background: var(--light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      padding: .75rem 1rem;
+      margin: .7rem 0;
+      font-size: .88rem;
+      color: var(--navy);
+      line-height: 1.75;
+    }
+
+    .update-date {
+      text-align: center;
+      font-size: .73rem;
+      color: var(--muted);
+      margin: 0 0 1.8rem;
+      letter-spacing: .06em;
+    }
+
+    .contact-box {
+      border: 2px solid var(--navy);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .contact-box .label {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .contact-box .value { font-size: .92rem; color: var(--navy); font-weight: 500; }
+    .contact-box a { color: var(--accent); text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    .bottom-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-bas {
+      padding: .9rem; background: var(--navy); color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      border: none; border-radius: 6px; cursor: pointer;
+      text-align: center; text-decoration: none; display: block;
+      transition: background .2s, transform .15s;
+    }
+    .btn-bas:hover { background: #2d3aaf; transform: translateY(-1px); }
+    .btn-bas.outline { background: var(--white); color: var(--navy); border: 2px solid var(--navy); }
+    .btn-bas.outline:hover { background: var(--light); }
+
+    @media (max-width: 520px) {
+      body { padding: 1.5rem .8rem 2rem; }
+      .logo-wrap img { max-width: 200px; }
+      .bottom-btns { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="logo-wrap">
+  <img src="static/LOGO2.png" alt="What's Next ?"
+       onerror="this.style.display='none'; document.getElementById('lf').style.display='flex'"/>
+  <button onclick="window.close()" style="
+    padding: .4rem .9rem;
+    border: 1.5px solid #333;
+    background: white;
+    font-size: .85rem;
+    cursor: pointer;
+  ">Fermer</button>
+</div>
+  <div id="lf" class="logo-text" style="display:none">
+    <span class="logo-script">What's Next ?</span>
+    <span class="logo-rule"></span>
+    <span class="logo-tagline">[ Ecrivez votre histoire ! ]</span>
+  </div>
+
+  <div class="card">
+
+    <p class="page-title">Politique de confidentialité</p>
+    <p class="page-subtitle">Dernière mise à jour : Avril 2025</p>
+
+    <div class="rgpd-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Conforme RGPD (UE) 2016/679 &amp; Loi marocaine n° 09-08
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro-text">
+      <h2>Bienvenue sur What's Next ?</h2>
+      <hr class="intro-line"/>
+      <p>
+        <strong>What's Next ?</strong> est une plateforme académique dédiée à l'orientation des bacheliers au Maroc
+        et dans l'espace francophone. Notre mission — résumée par notre devise <em>« Écrivez votre histoire ! »</em> —
+        est d'accompagner chaque élève dans la découverte de son parcours académique et professionnel.
+      </p>
+      <p>
+        La présente Politique de Confidentialité vous informe sur la façon dont nous collectons,
+        utilisons, stockons et protégeons vos données personnelles, conformément à la
+        <strong>loi marocaine n° 09-08</strong> relative à la protection des personnes physiques à l'égard du traitement
+        des données à caractère personnel.
+      </p>
+    </div>
+
+    <div class="divider-full"></div>
+
+    <!-- 1 -->
+    <div class="section-para">
+      <h3><span class="num">1</span>Responsable du traitement</h3>
+      <span class="sep"></span>
+      <p>
+        La plateforme <strong>What's Next ?</strong> est responsable du traitement de vos données personnelles
+        au sens du RGPD et de la loi marocaine n° 09-08. En tant que responsable du traitement, nous
+        déterminons les finalités et les moyens mis en œuvre pour traiter vos informations personnelles.
+        Nous nous engageons à traiter vos données avec le plus haut niveau de sécurité et de transparence.
+      </p>
+      <div class="highlight-box">
+        Toute demande relative à vos données peut être adressée à notre DPO (Délégué à la Protection des Données)
+        à l'adresse indiquée en bas de cette page.
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="section-para">
+      <h3><span class="num">2</span>Données collectées</h3>
+      <span class="sep"></span>
+      <p>
+        Dans le cadre de l'utilisation de notre plateforme, nous collectons uniquement les données strictement
+        nécessaires à la fourniture de nos services. Ces données comprennent vos données d'identification
+        (nom, prénom, adresse e-mail), vos données de connexion (adresse IP, date et heure de connexion,
+        type de navigateur), vos données de profil (préférences, centres d'intérêt, historique d'utilisation)
+        ainsi que vos données de paiement, traitées de manière chiffrée via un prestataire tiers sécurisé.
+      </p>
+      <p>
+        Nous ne collectons <strong>jamais</strong> de données sensibles telles que l'origine raciale ou ethnique,
+        les opinions politiques ou les données de santé, sauf consentement explicite et écrit de votre part.
+        Le principe de minimisation des données guide l'ensemble de nos pratiques de collecte.
+      </p>
+    </div>
+
+    <!-- 3 -->
+    <div class="section-para">
+      <h3><span class="num">3</span>Finalités du traitement</h3>
+      <span class="sep"></span>
+      <p>
+        Vos données personnelles sont traitées pour des finalités précises, légitimes et déterminées au moment
+        de leur collecte. Elles servent à la création et à la gestion de votre compte utilisateur, à la
+        fourniture et à la personnalisation des services de la plateforme, ainsi qu'à la communication liée
+        à votre compte (notifications, alertes, mises à jour).
+      </p>
+      <p>
+        Elles contribuent également à l'amélioration de nos services par analyse statistique anonymisée et
+        au respect de nos obligations légales et réglementaires. La base légale de chaque traitement est soit
+        l'exécution du contrat, soit notre intérêt légitime, soit une obligation légale, soit — pour les
+        communications marketing — votre consentement préalable explicite.
+      </p>
+    </div>
+
+    <!-- 4 -->
+    <div class="section-para">
+      <h3><span class="num">4</span>Conservation des données</h3>
+      <span class="sep"></span>
+      <p>
+        Vos données sont conservées <strong>pendant toute la durée de votre relation contractuelle</strong>
+        avec What's Next ?, puis archivées pour une durée maximale déterminée selon leur nature. Les données
+        de compte sont conservées 3 ans après la clôture de votre compte. Les données comptables et financières
+        sont conservées 5 ans conformément aux obligations légales. Les cookies et traceurs de navigation sont
+        quant à eux conservés 13 mois maximum.
+      </p>
+      <p>
+        Au-delà de ces délais, vos données sont définitivement supprimées ou anonymisées de manière irréversible,
+        sans possibilité de récupération, conformément au principe de limitation de la conservation prévu par
+        le RGPD et la loi n° 09-08.
+      </p>
+    </div>
+
+    <!-- 5 -->
+    <div class="section-para">
+      <h3><span class="num">5</span>Vos droits</h3>
+      <span class="sep"></span>
+      <p>
+        Conformément au RGPD et à la loi marocaine n° 09-08, vous disposez de droits étendus sur vos données
+        personnelles, que vous pouvez exercer à tout moment et sans frais. Vous bénéficiez du droit d'accès
+        pour obtenir une copie de l'ensemble de vos données, du droit de rectification pour corriger des
+        informations inexactes ou incomplètes, et du droit à l'effacement (« droit à l'oubli ») pour demander
+        la suppression de vos données.
+      </p>
+      <p>
+        Vous pouvez également exercer votre droit à la portabilité pour recevoir vos données dans un format
+        structuré et lisible, votre droit d'opposition pour refuser certains traitements notamment à des fins
+        marketing, et votre droit à la limitation pour restreindre le traitement dans les cas prévus par la loi.
+      </p>
+      <div class="highlight-box">
+        Pour exercer vos droits, contactez-nous à <strong>privacy@whatsnext.fr</strong>.
+        Nous nous engageons à vous répondre dans un délai de 30 jours maximum conformément à la réglementation.
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="section-para">
+      <h3><span class="num">6</span>Partage &amp; transferts de données</h3>
+      <span class="sep"></span>
+      <p>
+        Nous ne vendons, ne louons et ne cédons jamais vos données personnelles à des tiers à des fins
+        commerciales. Vos données peuvent être partagées uniquement avec nos prestataires techniques liés par
+        contrat de confidentialité (hébergement, paiement, emailing) et avec les autorités compétentes en cas
+        d'obligation légale ou de réquisition judiciaire.
+      </p>
+      <p>
+        Tout transfert de données hors du Maroc ou de l'Union Européenne est strictement encadré par des
+        <strong>clauses contractuelles types</strong> approuvées par les autorités de protection compétentes,
+        garantissant un niveau de protection équivalent à celui en vigueur dans l'espace européen et marocain.
+      </p>
+    </div>
+
+    <!-- 7 -->
+    <div class="section-para">
+      <h3><span class="num">7</span>Cookies &amp; traceurs</h3>
+      <span class="sep"></span>
+      <p>
+        La plateforme What's Next ? utilise des cookies et traceurs pour assurer son bon fonctionnement,
+        sécuriser votre session et améliorer votre expérience de navigation. Les cookies essentiels gèrent
+        la session et la sécurité et ne peuvent pas être désactivés car ils sont indispensables au
+        fonctionnement du service. Les cookies analytiques mesurent l'audience de manière anonymisée et
+        agrégée, sans jamais identifier un utilisateur individuellement.
+      </p>
+      <p>
+        Enfin, les cookies de personnalisation mémorisent vos préférences utilisateur afin d'adapter
+        l'affichage à vos habitudes. Vous pouvez gérer et modifier vos préférences à tout moment depuis
+        le bandeau de consentement affiché lors de votre première visite, ou depuis les paramètres de
+        votre compte. Votre consentement est enregistré pour une durée maximale de 13 mois.
+      </p>
+    </div>
+
+    <p class="update-date">Politique en vigueur depuis le 1er janvier 2025 — Version 2.0</p>
+
+    <div class="contact-box">
+      <span class="label">Contact DPO — Délégué à la Protection des Données</span>
+      <span class="value"><a href="mailto:privacy@whatsnext.fr">privacy@whatsnext.fr</a></span>
+      <span class="value" style="font-size:.82rem; color:var(--muted);">What's Next ? — Service juridique, Casablanca, Maroc</span>
+    </div>
+
+    <div class="bottom-btns">
+      <a href="login.html" class="btn-bas outline">← Retour</a>
+     
+    </div>
+
+  </div>
+<script src="static/rgpd.js"></script>
+</body>
+</html>

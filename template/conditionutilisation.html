@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conditions d'utilisation — What's Next ?</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:  rgb(59,80,128,.9);
+      --white: #ffffff;
+      --light: #f8f8fc;
+      --muted: #7a7a99;
+      --accent:#394476;
+      
+      --navy:        rgb(59,80,128,.9);
+      --blue-mid:    #3b5080;
+      --blue-btn:    #7a9ec0;
+      --white:       #ffffff;
+      --off:         #ffffff;
+      --muted:       #5a6a82;
+      --footer:      #8fa8c8;
+    }
+    
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── BANDEAU ANIMÉ ── */
+    .top-notice {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      overflow: hidden;
+      height: 36px;
+      display: flex;
+      align-items: center;
+    }
+    .top-notice-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: marquee 24s linear infinite;
+    }
+    .top-notice-track:hover { animation-play-state: paused; }
+    .notice-item {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: 0 2.8rem;
+      font-size: .72rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.88);
+      letter-spacing: .1em;
+    }
+    .notice-item .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .notice-item strong { color: #fff; font-weight: 700; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: calc(36px + 2.5rem) 1rem 3rem;
+      border-top: 3px solid var(--accent);
+    }
+ /* Remplacez .logo-wrap par : */
+.logo-wrap {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;  /* logo gauche, bouton droite */
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+    .logo-wrap img {
+  max-width: 300px;  /* was: 2060px */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+    /* ── CARD ── */
+    .card { width: 100%; max-width: 700px; }
+
+    /* ── EN-TÊTE ── */
+    .page-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: .3rem;
+    }
+    .page-subtitle {
+      font-size: .8rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+      margin-bottom: 1.6rem;
+    }
+
+    /* ── BADGE ── */
+    .rgpd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--light);
+      border: 1.5px solid var(--navy);
+      border-radius: 4px;
+      padding: .45rem .9rem;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 2.2rem;
+    }
+    .rgpd-badge svg { width: 14px; height: 14px; }
+
+    /* ── INTRO ── */
+    .intro-text { margin-bottom: 2.2rem; }
+    .intro-text h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: .55rem;
+    }
+    .intro-line {
+      border: none;
+      border-top: 2px solid var(--navy);
+      width: 48px;
+      margin-bottom: 1.2rem;
+    }
+    .intro-text p {
+      font-size: .95rem;
+      color: #3a3a5c;
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-text strong { color: var(--navy); font-weight: 600; }
+    .intro-text em { font-style: italic; }
+
+    /* ── SÉPARATEUR ── */
+    .divider-full {
+      width: 100%;
+      height: 1px;
+      background: #e0e0f0;
+      margin-bottom: 2.4rem;
+    }
+
+    /* ── SECTION PARAGRAPHE ── */
+    .section-para { margin-bottom: 2.4rem; }
+
+    .section-para h3 {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: .45rem;
+    }
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: .65rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .sep {
+      display: block;
+      width: 32px; height: 2px;
+      background: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-para p {
+      font-size: .92rem;
+      color: #3a3a5c;
+      line-height: 1.9;
+      margin-bottom: .8rem;
+    }
+    .section-para p:last-child { margin-bottom: 0; }
+    .section-para strong { color: var(--navy); font-weight: 600; }
+
+    /* ── ENCADRÉ ── */
+    .highlight-box {
+      background: var(--light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      padding: .75rem 1rem;
+      margin: .7rem 0;
+      font-size: .88rem;
+      color: var(--navy);
+      line-height: 1.75;
+    }
+    .highlight-box.navy { border-left-color: var(--navy); }
+
+    /* ── TABLEAU ABONNEMENTS ── */
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+      margin: .9rem 0 1rem;
+    }
+    .plan-card {
+      border: 1.5px solid var(--navy);
+      border-radius: 6px;
+      padding: .9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+    .plan-card.featured { border-color: var(--accent); }
+    .plan-name {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .plan-card.featured .plan-name { color: var(--accent); }
+    .plan-price {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .plan-desc {
+      font-size: .75rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── DATE ── */
+    .update-date {
+      text-align: center;
+      font-size: .73rem;
+      color: var(--muted);
+      margin: 0 0 1.8rem;
+      letter-spacing: .06em;
+    }
+
+    /* ── CASE ACCEPTATION ── */
+    .accept-box {
+      border: 2px solid var(--navy);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.4rem;
+      background: var(--light);
+    }
+    .accept-box p {
+      font-size: .85rem;
+      color: #3a3a5c;
+      line-height: 1.75;
+      margin-bottom: .9rem;
+    }
+    .accept-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+    }
+    .accept-row input[type="checkbox"] {
+      width: 18px; height: 18px;
+      accent-color: var(--accent);
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .accept-row label {
+      font-size: .85rem;
+      color: var(--navy);
+      font-weight: 500;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    /* ── BOUTONS ── */
+    .bottom-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .btn-bas {
+      padding: .9rem;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: background .2s, transform .15s;
+    }
+    .btn-bas:hover { background:rgb(59,80,128,.9); transform: translateY(-1px); }
+    .btn-bas.outline {
+      background: var(--white);
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn-bas.outline:hover { background: var(--light); }
+
+    /* ── MESSAGE ANIMÉ ── */
+    .animated-msg {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      margin-bottom: 1.6rem;
+      padding: .9rem 1.4rem;
+      background: linear-gradient(135deg, #f0eeff 0%, #faf8ff 50%, #ede8ff 100%);
+      background-size: 200% 100%;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      animation: shimmer 3s infinite linear;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .msg-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-4px); }
+    }
+    .msg-text {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: .02em;
+    }
+    .msg-cursor {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 700;
+      animation: blink .7s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    @media (max-width: 520px) {
+      body { padding: 1.5rem .8rem 2rem; }
+      .logo-wrap img { max-width: 200px; }
+      .bottom-btns { grid-template-columns: 1fr; }
+      .plan-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANDEAU ANIMÉ -->
+  <div class="top-notice">
+    <div class="top-notice-track">
+      <!-- Bloc 1 -->
+      <span class="notice-item"><span class="dot"></span>Merci de lire attentivement ces conditions avant d'utiliser la plateforme.</span>
+      <span class="notice-item"><span class="dot"></span>Votre utilisation vaut <strong>acceptation</strong> des présentes conditions.</span>
+      <span class="notice-item"><span class="dot"></span>Ces conditions sont conformes au <strong>droit marocain</strong> &amp; au <strong>RGPD</strong>.</span>
+      <span class="notice-item"><span class="dot"></span>Pour toute question : <strong>privacy@whatsnext.fr</strong></span>
+      <!-- Bloc 2 — copie exacte pour le défilement continu -->
+      <span class="notice-item"><span class="dot"></span>Merci de lire attentivement ces conditions avant d'utiliser la plateforme.</span>
+      <span class="notice-item"><span class="dot"></span>Votre utilisation vaut <strong>acceptation</strong> des présentes conditions.</span>
+      <span class="notice-item"><span class="dot"></span>Ces conditions sont conformes au <strong>droit marocain</strong> &amp; au <strong>RGPD</strong>.</span>
+      <span class="notice-item"><span class="dot"></span>Pour toute question : <strong>privacy@whatsnext.fr</strong></span>
+    </div>
+  </div>
+
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <img src="static/LOGO2.png" alt="What's Next ?"/>
+  </div>
+
+  <!-- MESSAGE ANIMÉ -->
+  <div class="animated-msg">
+    <span class="msg-icon"></span>
+    <span class="msg-text" id="msgText"></span>
+    <span class="msg-cursor">|</span>
+  </div>
+
+  <div class="card">
+
+    <p class="page-title">Conditions d'utilisation</p>
+    <p class="page-subtitle">Dernière mise à jour : Avril 2025</p>
+
+    <div class="rgpd-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </svg>
+      Contrat d'utilisation — Droit marocain &amp; RGPD
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro-text">
+      <h2>Bienvenue sur What's Next ?</h2>
+      <hr class="intro-line"/>
+      <p>
+        <strong>What's Next ?</strong> est une plateforme académique dédiée à l'orientation des bacheliers au Maroc
+        et dans l'espace francophone. Notre mission — résumée par notre devise <em>« Écrivez votre histoire ! »</em> —
+        est d'accompagner chaque élève dans la découverte de son parcours académique et professionnel.
+      </p>
+      <p>
+        Les présentes Conditions d'Utilisation définissent les règles d'accès et d'usage de la plateforme.
+        Elles s'appliquent à tout utilisateur, inscrit ou visiteur, et sont conformes au
+        <strong>droit marocain</strong> en vigueur ainsi qu'au règlement européen <strong>RGPD (UE) 2016/679</strong>.
+      </p>
+    </div>
+
+    <div class="divider-full"></div>
+
+    <!-- 1 -->
+    <div class="section-para">
+      <h3><span class="num">1</span>Objet &amp; acceptation</h3>
+      <span class="sep"></span>
+      <p>
+        Les présentes Conditions d'Utilisation régissent l'accès et l'utilisation de la plateforme
+        <strong>What's Next ?</strong>, accessible via application mobile et interface web. Elles constituent
+        un contrat juridiquement contraignant entre vous et What's Next ?, applicable dès votre première
+        utilisation du service.
+      </p>
+      <p>
+        En créant un compte ou en utilisant nos services, vous acceptez sans réserve ces conditions et notre
+        Politique de confidentialité. Ces conditions s'appliquent à tout utilisateur, qu'il soit inscrit
+        ou simple visiteur. Si vous n'acceptez pas l'ensemble de ces dispositions, veuillez cesser
+        immédiatement d'utiliser la plateforme.
+      </p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section-para">
+      <h3><span class="num">2</span>Inscription &amp; compte utilisateur</h3>
+      <span class="sep"></span>
+      <p>
+        Pour accéder aux fonctionnalités complètes de la plateforme, vous devez créer un compte en fournissant
+        des informations exactes, complètes et à jour. Vous devez être âgé d'au moins <strong>16 ans</strong>
+        ou disposer du consentement parental pour vous inscrire. Toute inscription au nom d'une tierce personne
+        sans son consentement est strictement interdite.
+      </p>
+      <p>
+        Il vous appartient de maintenir la confidentialité de vos identifiants de connexion et de notifier
+        immédiatement What's Next ? de toute utilisation non autorisée de votre compte. Vous êtes seul
+        responsable de l'ensemble des activités effectuées depuis votre compte, qu'elles aient été réalisées
+        par vous ou par un tiers ayant accédé à vos identifiants.
+      </p>
+    </div>
+
+    <!-- 3 -->
+    <div class="section-para">
+      <h3><span class="num">3</span>Services &amp; abonnements</h3>
+      <span class="sep"></span>
+      <p>
+        What's Next ? propose plusieurs formules d'accès adaptées à vos besoins. La formule gratuite offre
+        un accès limité aux fonctionnalités essentielles de la plateforme. Les formules payantes donnent
+        accès à l'ensemble des fonctionnalités, notamment les recommandations personnalisées, le suivi
+        de parcours avancé et le support prioritaire.
+      </p>
+
+      <div class="plan-grid">
+        <div class="plan-card">
+          <span class="plan-name">Gratuit</span>
+          <span class="plan-price">0 MAD</span>
+          <span class="plan-desc">Accès limité aux fonctionnalités de base</span>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-name">Premium</span>
+          <span class="plan-price">99 MAD/mois</span>
+          <span class="plan-desc">Accès complet, recommandations avancées</span>
+        </div>
+        <div class="plan-card">
+          <span class="plan-name">Annuel</span>
+          <span class="plan-price">800 MAD/an</span>
+          <span class="plan-desc">Toutes les fonctionnalités, tarif réduit</span>
+        </div>
+      </div>
+
+      <p>
+        Les abonnements payants sont renouvelés automatiquement à leur échéance. Vous pouvez résilier
+        à tout moment depuis votre espace utilisateur, au moins <strong>48 heures</strong> avant la prochaine
+        date de facturation, sans frais supplémentaires. Aucun remboursement ne sera accordé pour la
+        période en cours au moment de la résiliation.
+      </p>
+    </div>
+
+    <!-- 4 -->
+    <div class="section-para">
+      <h3><span class="num">4</span>Utilisation acceptable</h3>
+      <span class="sep"></span>
+      <p>
+        L'utilisation de la plateforme est strictement personnelle et non commerciale. Vous vous engagez
+        à ne pas publier de contenus illégaux, haineux, trompeurs ou violant les droits de tiers, et à ne
+        pas tenter d'accéder aux systèmes ou aux données d'autres utilisateurs. L'usage de bots, scripts
+        ou systèmes automatisés non autorisés est formellement prohibé.
+      </p>
+      <p>
+        Il est également interdit de revendre, sublicencier ou exploiter commercialement les services de
+        la plateforme, ou de contourner les mesures techniques de protection mises en place. Tout contenu
+        soumis doit respecter les lois en vigueur au Maroc et, le cas échéant, dans le pays de résidence
+        de l'utilisateur.
+      </p>
+      <div class="highlight-box navy">
+        Tout manquement à ces règles peut entraîner la suspension ou la suppression définitive du compte,
+        sans préavis ni remboursement, et pourra faire l'objet de poursuites judiciaires.
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="section-para">
+      <h3><span class="num">5</span>Propriété intellectuelle</h3>
+      <span class="sep"></span>
+      <p>
+        L'ensemble des éléments constitutifs de la plateforme — logo, charte graphique, algorithmes,
+        contenus éditoriaux, bases de données et logiciels — sont la propriété exclusive de
+        <strong>What's Next ?</strong> et sont protégés par le droit d'auteur marocain et international.
+        Toute reproduction, représentation ou exploitation non autorisée est passible de sanctions.
+      </p>
+      <p>
+        Vous conservez l'intégralité de la propriété des contenus que vous publiez sur la plateforme.
+        En les soumettant, vous accordez toutefois à What's Next ? une licence mondiale, non exclusive,
+        gratuite et sous-licenciable pour les utiliser, reproduire et afficher dans le seul cadre de la
+        fourniture du service.
+      </p>
+    </div>
+
+    <!-- 6 -->
+    <div class="section-para">
+      <h3><span class="num">6</span>Responsabilité &amp; garanties</h3>
+      <span class="sep"></span>
+      <p>
+        What's Next ? s'efforce de maintenir la plateforme disponible 24h/24, 7j/7, mais ne peut garantir
+        une disponibilité ininterrompue. Des interruptions pour maintenance planifiée ou pour des raisons
+        techniques indépendantes de notre volonté peuvent survenir. Notre responsabilité est strictement
+        limitée aux dommages directs et prévisibles résultant d'un manquement avéré de notre part.
+      </p>
+      <p>
+        Nous déclinons toute responsabilité concernant les contenus publiés par les utilisateurs, les
+        interruptions de service liées à des cas de force majeure, ainsi que les dommages indirects,
+        pertes de données ou manques à gagner liés à votre utilisation de la plateforme. Les informations
+        d'orientation fournies ont un caractère indicatif et ne constituent pas un conseil professionnel.
+      </p>
+    </div>
+
+    <!-- 7 -->
+    <div class="section-para">
+      <h3><span class="num">7</span>Modification &amp; résiliation</h3>
+      <span class="sep"></span>
+      <p>
+        What's Next ? se réserve le droit de modifier les présentes conditions à tout moment afin de
+        s'adapter aux évolutions légales, réglementaires ou fonctionnelles du service. En cas de
+        modification substantielle, vous serez notifié par e-mail <strong>30 jours avant</strong> la date
+        d'entrée en vigueur. La poursuite de l'utilisation de la plateforme après cette date vaut
+        acceptation des nouvelles conditions.
+      </p>
+      <p>
+        Vous pouvez supprimer votre compte à tout moment depuis <strong>Paramètres → Compte → Supprimer
+        mon compte</strong>. Vos données personnelles seront alors effacées conformément aux durées de
+        conservation définies dans notre Politique de confidentialité. What's Next ? se réserve également
+        le droit de résilier votre accès en cas de violation des présentes conditions.
+      </p>
+    </div>
+
+    <!-- 8 -->
+    <div class="section-para">
+      <h3><span class="num">8</span>Droit applicable &amp; litiges</h3>
+      <span class="sep"></span>
+      <p>
+        Les présentes conditions sont régies par le <strong>droit marocain</strong> en vigueur et,
+        pour les utilisateurs résidant dans l'Union Européenne, par le droit européen applicable,
+        notamment le RGPD. En cas de contradiction entre les deux régimes, la disposition offrant
+        le niveau de protection le plus élevé à l'utilisateur prévaudra.
+      </p>
+      <p>
+        En cas de litige relatif à l'interprétation ou à l'exécution des présentes conditions, une
+        solution amiable sera recherchée en priorité par voie de médiation. À défaut d'accord dans
+        un délai de 30 jours, les tribunaux compétents de <strong>Casablanca</strong> seront seuls
+        compétents pour trancher le différend.
+      </p>
+    </div>
+
+    <p class="update-date">Conditions en vigueur depuis le 1er janvier 2025 — Version 2.0</p>
+
+    <!-- ACCEPTATION -->
+    <div class="accept-box">
+      <p>En utilisant la plateforme What's Next ?, vous confirmez avoir lu, compris et accepté
+      l'intégralité des présentes Conditions d'utilisation ainsi que notre Politique de confidentialité.</p>
+      <div class="accept-row">
+        <input type="checkbox" id="acceptCGU"/>
+        <label for="acceptCGU">J'ai lu et j'accepte les Conditions d'utilisation et la Politique de confidentialité de What's Next ?</label>
+      </div>
+    </div>
+
+    <!-- BOUTONS -->
+    <div class="bottom-btns">
+      <a href="logon.html" class="btn-bas outline">← Retour</a>
+      
+    </div>
+
+  </div>
+
+<script>
+  const messages = [
+    'Merci de lire ces conditions avant de continuer.',
+    'Votre confiance est notre priorité.',
+    'Ces conditions protègent vos droits et les nôtres.',
+    'Prenez le temps de tout parcourir — merci !',
+    'En cas de question, contactez-nous à privacy@whatsnext.fr'
+  ];
+  let mi = 0, ci = 0, deleting = false;
+  const el = document.getElementById('msgText');
+
+  function type() {
+    const msg = messages[mi];
+    if (!deleting) {
+      el.textContent = msg.slice(0, ++ci);
+      if (ci === msg.length) { deleting = true; setTimeout(type, 2200); return; }
+    } else {
+      el.textContent = msg.slice(0, --ci);
+      if (ci === 0) { deleting = false; mi = (mi + 1) % messages.length; setTimeout(type, 400); return; }
+    }
+    setTimeout(type, deleting ? 35 : 55);
+  }
+  type();
+</script>
+<script src="static/rgpd.js"></script>
+</body>
+</html>
