@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>What's Next ?</title>
+    <title>AbridCarrer</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="../Styles/Acceuil.css">
 </head>
@@ -11,7 +11,7 @@
 <!-- NAVBAR -->
     <nav id="nav">
       <!-- LOGO IMAGE — mix-blend-mode:multiply supprime le fond blanc -->
-      <a href="#" class="logo-link">
+      <a href="#hero" class="logo-link">
         <img src="../assets/abridc.png" alt="What's Next ?" />
       </a>
       <ul class="nav-links" id="navLinks">
@@ -34,11 +34,11 @@
   <div class="hero-fade"></div>
   <div class="hero-inner">
     <!-- h1 : glisse de gauche → droite -->
-    <h1>Bienvennue sur <span style="color:#90A1B9;font-weight: bold;">Abrid</span><span style="color: #022F2E;">Career</span></h1>
+    <h1>Bienvennue sur <span style="color:#90A1B9;font-weight: bold;">What's</span><span style="color: #022F2E;">Next ?</span></h1>
     <!-- p : glisse de droite → gauche -->
     <p>Votre avenir commence ici</p>
     <div class="hero-btns">
-      <a href="#" class="hbtn">Explorer les Domaines</a>
+      <a href="#domaines" class="hbtn">Explorer les Domaines</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -219,13 +219,22 @@
       </div>
       <a href="#" class="btn-eval">Laisser un avis</a>
     </div>
+    <div class="form_contact">
+      <h3>Contactez-nous</h3>
+      <p>Une question, une suggestion ou besoin d'aide ? N'hésitez pas à nous contacter !</p>
+      <form id="contactForm" onsubmit="submitContactForm(event)">
+        <input type="text" name="name" placeholder="Votre nom" required />
+        <input type="email" name="email" placeholder="Votre email" required />
+        <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="ft-top">
-    <h1 class="sec-label">Contact</h1>
     <div class="ft-social">
       <a href="#">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white" style="vertical-align:middle;margin-right:5px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -315,19 +324,6 @@
         </div>
     </li>
 </ul>
-
-<script>
-function toggleContent(id) {
-    let content = document.getElementById(id);
-
-    if (content.style.display === "block") {
-        content.style.display = "none";
-    } else {
-        content.style.display = "block";
-    }
-}
-</script>
-
 </body>
 </html>
       </ul>
@@ -366,59 +362,7 @@ function toggleContent(id) {
     </p>
   </div>
 </footer>
-
-<script>
-  /* ── NAV SCROLL ── */
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
-  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
-
-  /* ── SCROLL REVEAL ── */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.dom-row, .eval-box').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(26px)';
-    el.style.transition = 'opacity .6s ease, transform .6s ease';
-    io.observe(el);
-  });
-
-
-  function toggleAccord(btn) {
-    const body = btn.nextElementSibling;
-    const isOpen = body.classList.contains('open');
-    // close all others
-    document.querySelectorAll('.accord-body.open').forEach(b => {
-      b.classList.remove('open');
-      b.previousElementSibling.classList.remove('open');
-    });
-    if (!isOpen) {
-      // Re-trigger li animations by replacing ul
-      const ul = body.querySelector('ul');
-      const clone = ul.cloneNode(true);
-      ul.replaceWith(clone);
-      body.classList.add('open');
-      btn.classList.add('open');
-    }
-  }
-  
-</script>
-<script>
-  const user = JSON.parse(localStorage.getItem('user'));
-  if (user) {
-    document.getElementById('username').textContent = user.nom;
-  }
-</script>
-
-<!-- et dans le HTML : -->
 <span id="username"></span>
-<script src="static/rgpd.js"></script>
+<script src="../Js/Aceuil.js"></script>
 </body>
 </html>
